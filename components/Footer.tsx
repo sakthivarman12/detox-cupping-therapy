@@ -13,9 +13,13 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-12 mb-12 pb-12 border-b border-ivory/20">
           {/* Brand */}
           <div>
-            <h4 className="font-serif text-xl mb-4">{siteData.brand.name}</h4>
-            <p className="text-ivory/70 text-sm leading-relaxed">
+            <h4 className="font-serif text-xl mb-2">{siteData.brand.name}</h4>
+            <p className="text-ivory/90 text-sm font-semibold mb-2">{siteData.therapist.name}</p>
+            <p className="text-ivory/70 text-sm leading-relaxed mb-3">
               {siteData.therapist.title}
+            </p>
+            <p className="text-ivory/60 text-xs">
+              Freelance Practice • Home Visits Available • Clinic Coming Soon
             </p>
           </div>
 
@@ -75,10 +79,10 @@ export default function Footer() {
                   {siteData.contact.email}
                 </a>
               )}
-              {siteData.contact.address !== '[CLINIC ADDRESS]' && (
+              {siteData.contact.serviceArea !== '[SERVICE AREA / CITY]' && (
                 <div className="flex items-start gap-2">
                   <MapPin size={16} className="mt-0.5 flex-shrink-0" />
-                  <span>{siteData.contact.address}</span>
+                  <span>Service Area: {siteData.contact.serviceArea}</span>
                 </div>
               )}
             </div>

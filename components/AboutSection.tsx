@@ -27,20 +27,33 @@ export default function AboutSection() {
             {/* Heading */}
             <div>
               <p className="text-xs tracking-widest text-forest font-semibold uppercase mb-4">
-                About Me
+                About Hussain
               </p>
               <h2 className="text-forest">Meet {siteData.therapist.name}</h2>
             </div>
 
             {/* Supporting heading */}
             <p className="text-lg text-charcoal/70 font-medium">
-              Science-informed education. Traditional wellness practices. Personalized sessions.
+              A qualified, certified, and personalized approach to holistic wellness.
             </p>
 
             {/* Bio */}
             <p className="text-charcoal/80 leading-relaxed">
-              {siteData.therapist.bio || 'With a strong foundation in pharmaceutical science and a passion for holistic wellness, I have dedicated my practice to combining evidence-based education with traditional wellness approaches. My journey into cupping therapy and flower medicine reflects a commitment to understanding the individual and providing personalized, professional care.'}
+              {siteData.therapist.bio}
             </p>
+
+            {/* Professional designation */}
+            <div className="space-y-3 py-4">
+              <p className="text-sm text-charcoal/70">
+                <span className="font-semibold text-forest">Professional Designation:</span>
+              </p>
+              <p className="text-base text-charcoal font-medium">
+                {siteData.therapist.title}
+              </p>
+              <p className="text-sm text-charcoal/70">
+                <span className="font-semibold text-forest">Practice Type:</span> {siteData.therapist.practiceType}
+              </p>
+            </div>
 
             {/* Quote */}
             <blockquote className="text-xl md:text-2xl text-forest font-serif italic border-l-4 border-gold pl-6">
@@ -49,7 +62,7 @@ export default function AboutSection() {
 
             {/* Additional info */}
             <p className="text-charcoal/70">
-              My approach centers on listening to your individual needs, assessing the most appropriate wellness practice for your circumstances, and providing thoughtful, personalized care. I believe that wellness is deeply personal, and every session should reflect that understanding.
+              Hussain&apos;s approach centers on listening to your individual needs, assessing the most appropriate wellness practice for your circumstances, and providing thoughtful, personalized care. Professional practice, individual attention, and safety-conscious care form the foundation of every session.
             </p>
 
             {/* CTA */}

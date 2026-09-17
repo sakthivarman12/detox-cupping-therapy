@@ -3,6 +3,7 @@ import HeroSection from '@/components/HeroSection';
 import AboutSection from '@/components/AboutSection';
 import QualificationsSection from '@/components/QualificationsSection';
 import ServicesSection from '@/components/ServicesSection';
+import HomeVisitsSection from '@/components/HomeVisitsSection';
 import SessionJourney from '@/components/SessionJourney';
 import ApproachSection from '@/components/ApproachSection';
 import SafetySection from '@/components/SafetySection';
@@ -19,6 +20,7 @@ export default function Home() {
       <AboutSection />
       <QualificationsSection />
       <ServicesSection />
+      <HomeVisitsSection />
       <SessionJourney />
       <ApproachSection />
       <SafetySection />

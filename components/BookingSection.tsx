@@ -1,6 +1,7 @@
 'use client';
 
 import BookingForm from './BookingForm';
+import { siteData } from '@/lib/site-data';
 
 export default function BookingSection() {
   return (
@@ -9,12 +10,12 @@ export default function BookingSection() {
         {/* Header */}
         <div className="max-w-2xl mx-auto text-center mb-16 md:mb-20">
           <p className="text-xs tracking-widest text-forest font-semibold uppercase mb-4">
-            Next Steps
+            Book Your Home Visit
           </p>
-          <h2 className="text-forest mb-6">Begin With a Conversation</h2>
+          <h2 className="text-forest mb-6">Connect With Hussain</h2>
           <p className="text-lg text-charcoal/70">
-            Have questions about cupping therapy or flower medicine? Start with a consultation
-            and learn more about the approach that may be appropriate for you.
+            Enquire about Dry Cupping, Wet Cupping / Hijama, or Certified Flower Medicine consultations.
+            Home visits are currently available by appointment.
           </p>
         </div>
 
@@ -51,6 +52,3 @@ export default function BookingSection() {
     </section>
   );
 }
-
-// Import siteData for footer
-import { siteData } from '@/lib/site-data';

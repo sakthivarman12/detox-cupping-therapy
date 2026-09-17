@@ -79,23 +79,33 @@ export default function HeroSection() {
               </p>
             </div>
 
-            {/* Credentials */}
+            {/* Therapist Name */}
             <div>
-              <p className="text-xs tracking-widest text-charcoal/60 font-semibold uppercase">
-                {siteData.therapist.title}
+              <p className="text-sm tracking-widest text-charcoal/60 font-semibold uppercase">
+                by {siteData.therapist.name}
               </p>
             </div>
 
             {/* Headline */}
             <h1 className="text-forest leading-tight">
-              A Personalized Approach to Cupping & Holistic Wellness
+              Personalized Cupping & Flower Medicine Sessions, Brought to Your Home
             </h1>
 
             {/* Supporting paragraph */}
             <p className="text-lg text-charcoal/80 max-w-lg leading-relaxed">
-              Combining a pharmacy education, professional cupping training, and flower medicine
-              practice to create thoughtful, personalized wellness sessions.
+              {siteData.therapist.name} is a Pharmacy Graduate, Certified Cupping Therapist, and Certified Flower Medicine Practitioner offering personalized home-visit wellness sessions.
             </p>
+
+            {/* Status Badges */}
+            <div className="flex flex-wrap gap-3 pt-2">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-forest text-white rounded-full text-sm font-semibold">
+                <span className="w-2 h-2 bg-white rounded-full" />
+                HOME VISITS AVAILABLE
+              </div>
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-sage/20 border border-sage text-forest rounded-full text-sm font-semibold">
+                CLINIC COMING SOON
+              </div>
+            </div>
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
@@ -108,10 +118,10 @@ export default function HeroSection() {
                 }}
                 className="btn-primary"
               >
-                Book a Consultation
+                Book a Home Visit
               </button>
-              <a href="#services" className="btn-secondary">
-                Explore My Practice
+              <a href="#qualifications" className="btn-secondary">
+                View Qualifications
               </a>
             </div>
 
@@ -124,7 +134,7 @@ export default function HeroSection() {
                 {[
                   'Pharmacy Graduate',
                   'Certified Cupping Therapist',
-                  'Flower Medicine Practitioner',
+                  'Certified Flower Medicine Practitioner',
                 ].map((badge) => (
                   <div
                     key={badge}

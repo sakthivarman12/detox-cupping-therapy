@@ -11,6 +11,7 @@ export default function BookingForm() {
     phone: '',
     email: '',
     service: '',
+    area: '',
     date: '',
     time: '',
     message: '',
@@ -44,6 +45,7 @@ export default function BookingForm() {
         phone: '',
         email: '',
         service: '',
+        area: '',
         date: '',
         time: '',
         message: '',
@@ -114,24 +116,39 @@ export default function BookingForm() {
         />
       </div>
 
-      {/* Service Selection */}
-      <div>
-        <label className="block text-sm font-semibold text-charcoal mb-2">
-          Preferred Service *
-        </label>
-        <select
-          name="service"
-          value={formData.service}
-          onChange={handleChange}
-          required
-          className="w-full px-4 py-3 border border-sage/30 rounded-lg bg-ivory focus:outline-none focus:border-forest transition-colors"
-        >
-          <option value="">Select a service</option>
-          <option value="dry-cupping">Dry Cupping</option>
-          <option value="wet-cupping">Wet Cupping / Hijama</option>
-          <option value="flower-medicine">Flower Medicine</option>
-          <option value="consultation">General Consultation</option>
-        </select>
+      {/* Service Selection and Area */}
+      <div className="grid md:grid-cols-2 gap-6">
+        <div>
+          <label className="block text-sm font-semibold text-charcoal mb-2">
+            Preferred Service *
+          </label>
+          <select
+            name="service"
+            value={formData.service}
+            onChange={handleChange}
+            required
+            className="w-full px-4 py-3 border border-sage/30 rounded-lg bg-ivory focus:outline-none focus:border-forest transition-colors"
+          >
+            <option value="">Select a service</option>
+            <option value="dry-cupping">Dry Cupping</option>
+            <option value="wet-cupping">Wet Cupping / Hijama</option>
+            <option value="flower-medicine">Flower Medicine</option>
+            <option value="consultation">General Consultation</option>
+          </select>
+        </div>
+        <div>
+          <label className="block text-sm font-semibold text-charcoal mb-2">
+            Area / Locality
+          </label>
+          <input
+            type="text"
+            name="area"
+            value={formData.area}
+            onChange={handleChange}
+            className="w-full px-4 py-3 border border-sage/30 rounded-lg bg-ivory focus:outline-none focus:border-forest transition-colors"
+            placeholder="Your area or locality"
+          />
+        </div>
       </div>
 
       {/* Date and Time */}
@@ -177,6 +194,14 @@ export default function BookingForm() {
         />
       </div>
 
+      {/* Home Visits Note */}
+      <div className="bg-forest/5 border border-sage/30 rounded-lg p-4">
+        <p className="text-sm text-charcoal/80">
+          <span className="font-semibold text-forest">Home Visits Available:</span> Detox Cupping Therapy
+          currently provides personalized sessions at your home by appointment.
+        </p>
+      </div>
+
       {/* Submit Button */}
       <button
         type="submit"
@@ -189,14 +214,14 @@ export default function BookingForm() {
             Submitting...
           </>
         ) : (
-          'Book Your Consultation'
+          'Book a Home Visit'
         )}
       </button>
 
       {/* Privacy note */}
       <p className="text-xs text-charcoal/50 text-center">
         We respect your privacy. Your information will only be used to confirm your
-        consultation.
+        home-visit consultation.
       </p>
     </form>
   );
