@@ -1,0 +1,167 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --font-sans: 'Poppins', sans-serif;
+  --font-serif: 'Playfair Display', serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #FFFBF5;
+  color: #2C2C2C;
+  font-family: var(--font-sans);
+  line-height: 1.6;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F8F7F3;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C5D5C0;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2D5A46;
+}
+
+/* Smooth transitions */
+button,
+a {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Typography */
+h1,
+h2,
+h3 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 7vw, 4.5rem);
+  line-height: 1.1;
+}
+
+h2 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.2;
+}
+
+h3 {
+  font-size: clamp(1.25rem, 3vw, 1.875rem);
+}
+
+/* Container */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Focus styles */
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid #2D5A46;
+  outline-offset: 2px;
+}
+
+/* Premium card styles */
+.premium-card {
+  border: 1px solid rgba(45, 90, 70, 0.1);
+  background: rgba(255, 251, 245, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.premium-card:hover {
+  border-color: rgba(45, 90, 70, 0.2);
+  box-shadow: 0 20px 40px rgba(45, 90, 70, 0.08);
+  transform: translateY(-4px);
+}
+
+/* Button styles */
+.btn-primary {
+  @apply px-8 py-3 bg-forest text-ivory rounded-full font-semibold text-sm uppercase tracking-wide hover:bg-charcoal active:scale-95;
+}
+
+.btn-secondary {
+  @apply px-8 py-3 border border-forest text-forest rounded-full font-semibold text-sm uppercase tracking-wide hover:bg-forest hover:text-ivory;
+}
+
+.btn-tertiary {
+  @apply px-8 py-3 text-forest font-semibold text-sm underline hover:no-underline;
+}
+
+/* Gradient backgrounds */
+.gradient-warm {
+  background: linear-gradient(135deg, #FFFBF5 0%, #F8F7F3 100%);
+}
+
+.gradient-sage {
+  background: linear-gradient(135deg, rgba(197, 213, 192, 0.1) 0%, rgba(45, 90, 70, 0.05) 100%);
+}
+
+/* Decorative elements */
+.cupping-circle {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 2px solid rgba(45, 90, 70, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cupping-circle::before {
+  content: '';
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 1px solid rgba(45, 90, 70, 0.15);
+}
+
+.cupping-circle::after {
+  content: '';
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 1px solid rgba(45, 90, 70, 0.1);
+}
