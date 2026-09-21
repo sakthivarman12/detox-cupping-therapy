@@ -890,19 +890,19 @@
                     <div style="width: 100%; aspect-ratio: 1; background: linear-gradient(135deg, #b5d4b8 0%, #d9e8d4 100%); border-radius: 0.5rem; display: flex; align-items: center; justify-content: center; font-size: 3rem; margin-bottom: 1rem;">🍃</div>
                     <h3>Dry Cupping</h3>
                     <p class="text-sm" style="color: var(--charcoal); opacity: 0.8;">A traditional wellness practice using suction to promote circulation and relaxation. Available as home-visit sessions.</p>
-                    <a href="#booking-form" class="btn-secondary" style="display: block; margin-top: 1rem; text-align: center;">BOOK A HOME VISIT</a>
+                    <button class="btn-secondary" style="display: block; margin-top: 1rem; text-align: center; width: 100%;" onclick="sendServiceWhatsApp('Dry Cupping')">BOOK A HOME VISIT</button>
                 </div>
                 <div class="premium-card">
                     <div style="width: 100%; aspect-ratio: 1; background: linear-gradient(135deg, #8ca57f 0%, #b5d4b8 100%); border-radius: 0.5rem; display: flex; align-items: center; justify-content: center; font-size: 3rem; margin-bottom: 1rem;">🌿</div>
                     <h3>Wet Cupping / Hijama</h3>
                     <p class="text-sm" style="color: var(--charcoal); opacity: 0.8;">A traditional practice combining cupping with controlled micro-scarification, practiced with strict hygiene protocols. Available as home-visit sessions.</p>
-                    <a href="#booking-form" class="btn-secondary" style="display: block; margin-top: 1rem; text-align: center;">BOOK A HOME VISIT</a>
+                    <button class="btn-secondary" style="display: block; margin-top: 1rem; text-align: center; width: 100%;" onclick="sendServiceWhatsApp('Wet Cupping / Hijama')">BOOK A HOME VISIT</button>
                 </div>
                 <div class="premium-card">
                     <div style="width: 100%; aspect-ratio: 1; background: linear-gradient(135deg, #c5d5c0 0%, #d9e8d4 100%); border-radius: 0.5rem; display: flex; align-items: center; justify-content: center; font-size: 3rem; margin-bottom: 1rem;">🌸</div>
                     <h3>Flower Medicine</h3>
                     <p class="text-sm" style="color: var(--charcoal); opacity: 0.8;">A complementary wellness approach using carefully selected flower essences to support emotional and personal wellbeing. Available by home-visit consultation.</p>
-                    <a href="#booking-form" class="btn-secondary" style="display: block; margin-top: 1rem; text-align: center;">BOOK A CONSULTATION</a>
+                    <button class="btn-secondary" style="display: block; margin-top: 1rem; text-align: center; width: 100%;" onclick="sendServiceWhatsApp('Flower Medicine')">BOOK A CONSULTATION</button>
                 </div>
             </div>
         </div>
@@ -1270,6 +1270,23 @@
                 header.classList.add('active');
                 chevron.classList.add('active');
             }
+        }
+
+        // Service-specific WhatsApp inquiry
+        function sendServiceWhatsApp(service) {
+            let message = '';
+
+            if (service === 'Dry Cupping') {
+                message = `Hello Hussain, I am interested in booking a Dry Cupping session. Could you please share more details about the service, pricing, and availability for home visits?`;
+            } else if (service === 'Wet Cupping / Hijama') {
+                message = `Hello Hussain, I am interested in booking a Wet Cupping / Hijama session. Could you please share more details about the service, pricing, and availability for home visits?`;
+            } else if (service === 'Flower Medicine') {
+                message = `Hello Hussain, I am interested in a Flower Medicine consultation. Could you please share more details about the consultation, pricing, and availability for home visits?`;
+            }
+
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/917695993823?text=${encodedMessage}`;
+            window.open(whatsappUrl, '_blank');
         }
 
         // Form handling
