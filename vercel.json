@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/detox-cupping-therapy.html"
+    }
+  ],
+  "public": true
+}
