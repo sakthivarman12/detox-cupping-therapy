@@ -10,9 +10,9 @@ export default function AboutSection() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Left: Portrait */}
           <div className="relative">
-            <div className="w-full aspect-square relative rounded-2xl overflow-hidden shadow-2xl bg-beige">
+            <div className="w-full h-auto relative rounded-2xl overflow-hidden shadow-2xl bg-beige">
               <Image
-                src="/images/therapist/portrait-alt.svg"
+                src="/images/therapist/hussain.png"
                 alt={siteData.therapist.name}
                 fill
                 className="object-cover"

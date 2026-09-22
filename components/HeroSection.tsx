@@ -53,14 +53,14 @@ export default function HeroSection() {
               ref={portraitRef}
               className="relative transition-transform duration-300 ease-out"
             >
-              <div className="w-80 h-96 md:w-96 md:h-[500px] relative rounded-2xl overflow-hidden shadow-2xl bg-beige">
+              <div className="w-96 h-auto md:w-[550px] md:h-auto relative rounded-2xl overflow-hidden shadow-2xl bg-beige">
                 <Image
-                  src="/images/therapist/portrait.svg"
-                  alt={siteData.therapist.name}
+                  src="/images/services-banner.png"
+                  alt="Personalized Cupping & Flower Medicine Services"
                   fill
                   className="object-cover"
                   priority
-                  sizes="(max-width: 768px) 320px, 384px"
+                  sizes="(max-width: 768px) 100%, 550px"
                 />
               </div>
 
