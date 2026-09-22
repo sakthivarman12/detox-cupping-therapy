@@ -1,9 +1,11 @@
 {
-  "version": 2,
-  "routes": [
+  "buildCommand": "",
+  "outputDirectory": "public",
+  "framework": null,
+  "redirects": [
     {
-      "src": "/(.*)",
-      "dest": "/detox-cupping-therapy.html"
+      "source": "/:path*",
+      "destination": "/detox-cupping-therapy.html"
     }
   ],
   "public": true
