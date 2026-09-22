@@ -1,0 +1,1350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Detox Cupping Therapy by Hussain Ahamed S M — Pharmacy Graduate, Certified Cupping Therapist, and Certified Flower Medicine Practitioner offering personalized home-visit wellness sessions.">
+    <meta property="og:title" content="Detox Cupping Therapy | Hussain Ahamed S M | Certified Cupping & Flower Medicine Practitioner">
+    <meta property="og:description" content="Detox Cupping Therapy by Hussain Ahamed S M — Pharmacy Graduate, Certified Cupping Therapist, and Certified Flower Medicine Practitioner offering personalized home-visit wellness sessions.">
+    <meta property="og:type" content="website">
+    <title>Detox Cupping Therapy | Hussain Ahamed S M | Certified Cupping & Flower Medicine Practitioner</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --cream: #F8F7F3;
+            --ivory: #FFFBF5;
+            --beige: #E8E1D8;
+            --sage: #C5D5C0;
+            --forest: #2D5A46;
+            --charcoal: #2C2C2C;
+            --gold: #D4A574;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: var(--charcoal);
+            background-color: var(--ivory);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', Georgia, serif;
+            color: var(--forest);
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        h2 {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        @media (min-width: 768px) {
+            h3 {
+                font-size: 1.5rem;
+            }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+        }
+
+        section {
+            padding: 3rem 1rem;
+        }
+
+        @media (min-width: 768px) {
+            section {
+                padding: 5rem 0;
+            }
+        }
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            background-color: rgba(255, 251, 245, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            border-bottom: 1px solid rgba(197, 213, 192, 0.2);
+            padding: 1rem 0;
+        }
+
+        .navbar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar-brand {
+            display: flex;
+            flex-direction: column;
+            font-weight: 600;
+            text-decoration: none;
+            color: var(--forest);
+        }
+
+        .navbar-brand-title {
+            font-size: 1.1rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .navbar-brand-subtitle {
+            font-size: 0.75rem;
+            color: var(--charcoal);
+            opacity: 0.7;
+        }
+
+        .nav-links {
+            display: none;
+            gap: 2rem;
+            list-style: none;
+            position: absolute;
+            top: 70px;
+            left: 0;
+            right: 0;
+            flex-direction: column;
+            background-color: rgba(255, 251, 245, 0.98);
+            backdrop-filter: blur(10px);
+            padding: 1rem;
+            border-bottom: 1px solid rgba(197, 213, 192, 0.2);
+        }
+
+        .nav-links.active {
+            display: flex;
+        }
+
+        @media (min-width: 768px) {
+            .nav-links {
+                position: static;
+                background-color: transparent;
+                backdrop-filter: none;
+                flex-direction: row;
+                border: none;
+                padding: 0;
+                gap: 2rem;
+            }
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--charcoal);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a:hover {
+            color: var(--forest);
+        }
+
+        @media (min-width: 768px) {
+            .nav-links a {
+                font-size: 0.95rem;
+                padding: 0;
+            }
+        }
+
+        .menu-toggle {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .menu-toggle span {
+            width: 1.5rem;
+            height: 2px;
+            background-color: var(--forest);
+            transition: all 0.3s;
+        }
+
+        .menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(0.5rem, 0.5rem);
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(0.5rem, -0.5rem);
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background-color: var(--forest);
+            color: white;
+            padding: 0.875rem 1.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        @media (min-width: 768px) {
+            .btn-primary {
+                padding: 0.875rem 2rem;
+                font-size: 0.95rem;
+            }
+        }
+
+        .btn-primary:hover {
+            background-color: #1f4335;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            display: inline-block;
+            background-color: transparent;
+            color: var(--forest);
+            padding: 0.875rem 1.5rem;
+            border: 2px solid var(--forest);
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        @media (min-width: 768px) {
+            .btn-secondary {
+                padding: 0.875rem 2rem;
+                font-size: 0.95rem;
+            }
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--forest);
+            color: white;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .badge-primary {
+            background-color: var(--forest);
+            color: white;
+        }
+
+        .badge-secondary {
+            background-color: rgba(197, 213, 192, 0.3);
+            color: var(--forest);
+            border: 1px solid var(--sage);
+        }
+
+        .badge::before {
+            content: '●';
+            font-size: 0.6rem;
+        }
+
+        .gradient-warm {
+            background: linear-gradient(135deg, var(--ivory) 0%, rgba(232, 225, 216, 0.5) 100%);
+        }
+
+        .premium-card {
+            background: white;
+            border: 1px solid rgba(197, 213, 192, 0.3);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            transition: all 0.3s;
+        }
+
+        @media (min-width: 768px) {
+            .premium-card {
+                padding: 2rem;
+            }
+        }
+
+        .premium-card:hover {
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            transform: translateY(-4px);
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        @media (min-width: 768px) {
+            .menu-toggle {
+                display: none;
+            }
+
+            .nav-links {
+                display: flex !important;
+            }
+
+            .grid-2 {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .grid-3 {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .grid-4 {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .text-forest {
+            color: var(--forest);
+        }
+
+        .text-charcoal {
+            color: var(--charcoal);
+        }
+
+        .text-sm {
+            font-size: 0.875rem;
+        }
+
+        .text-xs {
+            font-size: 0.75rem;
+        }
+
+        .uppercase {
+            text-transform: uppercase;
+        }
+
+        .tracking-wide {
+            letter-spacing: 0.1em;
+        }
+
+        .mb-4 {
+            margin-bottom: 1rem;
+        }
+
+        .mb-6 {
+            margin-bottom: 1.5rem;
+        }
+
+        .mb-8 {
+            margin-bottom: 2rem;
+        }
+
+        .mt-8 {
+            margin-top: 2rem;
+        }
+
+        .pt-8 {
+            padding-top: 2rem;
+        }
+
+        .space-y-4 > * + * {
+            margin-top: 1rem;
+        }
+
+        .space-y-6 > * + * {
+            margin-top: 1.5rem;
+        }
+
+        .space-y-8 > * + * {
+            margin-top: 2rem;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .flex-col {
+            flex-direction: column;
+        }
+
+        .items-center {
+            align-items: center;
+        }
+
+        .justify-center {
+            justify-content: center;
+        }
+
+        .gap-4 {
+            gap: 1rem;
+        }
+
+        .gap-8 {
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .gap-8 {
+                gap: 2rem;
+            }
+        }
+
+        .bg-ivory {
+            background-color: var(--ivory);
+        }
+
+        .bg-cream {
+            background-color: var(--cream);
+        }
+
+        .bg-forest {
+            background-color: var(--forest);
+            color: white;
+        }
+
+        .border-t {
+            border-top: 1px solid rgba(197, 213, 192, 0.3);
+        }
+
+        .rounded-lg {
+            border-radius: 0.5rem;
+        }
+
+        .rounded-2xl {
+            border-radius: 1rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: auto;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--ivory) 0%, rgba(232, 225, 216, 0.5) 100%);
+            padding: 3rem 0;
+        }
+
+        @media (min-width: 768px) {
+            .hero {
+                min-height: 90vh;
+                padding: 5rem 0;
+            }
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        @media (min-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .hero-portrait {
+            width: 100%;
+            max-width: 550px;
+            height: auto;
+            background: linear-gradient(135deg, #d9e8d4 0%, #b5d4b8 100%);
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: rgba(0, 0, 0, 0.1);
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        /* Forms */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid rgba(197, 213, 192, 0.3);
+            border-radius: 0.5rem;
+            background-color: var(--ivory);
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--forest);
+            box-shadow: 0 0 0 3px rgba(45, 90, 70, 0.1);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+
+        @media (min-width: 768px) {
+            .form-row {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--forest);
+            color: var(--ivory);
+            padding: 2rem 0 1rem;
+            margin-top: 3rem;
+        }
+
+        @media (min-width: 768px) {
+            footer {
+                padding: 3rem 0 1rem;
+                margin-top: 5rem;
+            }
+        }
+
+        footer h4, footer h5 {
+            color: var(--ivory);
+        }
+
+        footer a {
+            color: var(--ivory);
+            opacity: 0.8;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        footer a:hover {
+            opacity: 1;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .footer-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 251, 245, 0.1);
+            padding-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        @media (min-width: 768px) {
+            .footer-bottom {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
+
+        .step-circle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: rgba(45, 90, 70, 0.1);
+            border: 2px solid var(--forest);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--forest);
+            position: relative;
+            margin: 0 auto 1rem;
+        }
+
+        .step-circle::after {
+            content: '';
+            position: absolute;
+            right: -50px;
+            top: 50%;
+            width: 40px;
+            height: 2px;
+            background: linear-gradient(to right, var(--forest), rgba(45, 90, 70, 0.2));
+            transform: translateY(-50%);
+        }
+
+        @media (min-width: 768px) {
+            .step-circle::after {
+                display: block;
+            }
+        }
+
+        .step-circle:last-child::after {
+            display: none;
+        }
+
+        .accordion {
+            border: 1px solid rgba(197, 213, 192, 0.3);
+            border-radius: 0.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .accordion-header {
+            padding: 0.875rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: white;
+            border: none;
+            width: 100%;
+            text-align: left;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--forest);
+            transition: background-color 0.3s;
+        }
+
+        @media (min-width: 768px) {
+            .accordion-header {
+                padding: 1rem;
+                font-size: 1rem;
+            }
+
+            .accordion {
+                margin-bottom: 1rem;
+            }
+        }
+
+        .accordion-header:hover {
+            background-color: rgba(45, 90, 70, 0.05);
+        }
+
+        .accordion-header.active {
+            background-color: rgba(45, 90, 70, 0.05);
+        }
+
+        .accordion-content {
+            padding: 0.875rem;
+            display: none;
+            color: var(--charcoal);
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+
+        @media (min-width: 768px) {
+            .accordion-content {
+                padding: 1rem;
+                font-size: 1rem;
+            }
+        }
+
+        .accordion-content.active {
+            display: block;
+        }
+
+        .chevron {
+            transition: transform 0.3s;
+        }
+
+        .chevron.active {
+            transform: rotate(180deg);
+        }
+
+        .success-message {
+            text-align: center;
+            padding: 3rem 1rem;
+        }
+
+        .success-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background-color: var(--forest);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin: 0 auto 1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-content">
+                <a href="#" class="navbar-brand">
+                    <span class="navbar-brand-title">Detox Cupping Therapy</span>
+                    <span class="navbar-brand-subtitle">Pharmacy Graduate</span>
+                </a>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Hussain</a></li>
+                    <li><a href="#qualifications">Qualifications</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#home-visits">Home Visits</a></li>
+                    <li><a href="#approach">Approach</a></li>
+                    <li><a href="#safety">Safety</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+                <button class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <img src="/images/services-banner.png" alt="Personalized Cupping & Flower Medicine Services" class="hero-portrait" style="object-fit: cover;">
+                <div class="space-y-8">
+                    <div>
+                        <p class="text-xs uppercase tracking-wide text-forest mb-4">Detox Cupping Therapy</p>
+                        <p class="text-xs uppercase tracking-wide text-charcoal mb-4">by Hussain Ahamed S M</p>
+                        <h1>Personalized Cupping & Flower Medicine Sessions, Brought to Your Home</h1>
+                        <p class="text-sm mt-8" style="color: var(--charcoal); opacity: 0.8;">Hussain Ahamed S M is a Pharmacy Graduate, Certified Cupping Therapist, and Certified Flower Medicine Practitioner offering personalized home-visit wellness sessions.</p>
+                    </div>
+                    <div>
+                        <div style="margin-bottom: 2rem;">
+                            <span class="badge badge-primary">HOME VISITS AVAILABLE</span>
+                            <span class="badge badge-secondary">CLINIC COMING SOON</span>
+                        </div>
+                        <div class="flex flex-col gap-4">
+                            <button class="btn-primary" onclick="scrollTo('booking-form')">BOOK A HOME VISIT</button>
+                            <a href="https://wa.me/917695993823?text=Hello%20Hussain,%20I%20would%20like%20to%20know%20more%20about%20your%20cupping%20therapy%20and%20flower%20medicine%20services.%20Could%20you%20please%20share%20more%20details?" target="_blank" class="btn-secondary">ENQUIRE ON WHATSAPP</a>
+                        </div>
+                    </div>
+                    <div class="border-t pt-8">
+                        <p class="text-xs uppercase tracking-wide text-charcoal mb-4">Professional Qualifications</p>
+                        <div class="flex flex-col gap-3">
+                            <div class="badge badge-primary" style="background-color: rgba(45, 90, 70, 0.05); color: var(--forest); border: 1px solid var(--sage);">Pharmacy Graduate</div>
+                            <div class="badge badge-primary" style="background-color: rgba(45, 90, 70, 0.05); color: var(--forest); border: 1px solid var(--sage);">Certified Cupping Therapist</div>
+                            <div class="badge badge-primary" style="background-color: rgba(45, 90, 70, 0.05); color: var(--forest); border: 1px solid var(--sage);">Certified Flower Medicine Practitioner</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="bg-ivory">
+        <div class="container">
+            <div class="hero-content">
+                <img src="/images/therapist/hussain.png" alt="Hussain Ahamed S M" class="hero-portrait" style="object-fit: cover;">
+                <div class="space-y-8">
+                    <div>
+                        <p class="text-xs uppercase tracking-wide text-forest mb-4">About Hussain</p>
+                        <h2>Meet Hussain Ahamed S M</h2>
+                        <p class="mb-6" style="color: var(--charcoal); opacity: 0.8;">A qualified, certified, and personalized approach to holistic wellness.</p>
+                    </div>
+                    <p style="color: var(--charcoal); opacity: 0.85;">Hussain Ahamed S M combines pharmaceutical education with certified training in cupping therapy and flower medicine to offer personalized home-visit wellness sessions. With a commitment to professional practice, safety-conscious care, and individual attention, Hussain provides a thoughtful, personalized approach to wellness in the comfort of your own home.</p>
+                    <div class="space-y-3">
+                        <p class="text-sm"><strong style="color: var(--forest);">Professional Designation:</strong></p>
+                        <p style="color: var(--charcoal);">Pharmacy Graduate | Certified Cupping Therapist | Certified Flower Medicine Practitioner</p>
+                        <p class="text-sm"><strong style="color: var(--forest);">Practice Type:</strong> Freelance Home-Visit Wellness Practitioner</p>
+                    </div>
+                    <blockquote style="border-left: 4px solid var(--gold); padding-left: 1.5rem; font-size: 1.25rem; font-style: italic; color: var(--forest);">
+                        "Wellness begins with understanding the individual."
+                    </blockquote>
+                    <p style="color: var(--charcoal); opacity: 0.85;">Hussain's approach centers on listening to your individual needs, assessing the most appropriate wellness practice for your circumstances, and providing thoughtful, personalized care. Professional practice, individual attention, and safety-conscious care form the foundation of every session.</p>
+                    <button class="btn-primary" onclick="scrollTo('booking-form')">SCHEDULE YOUR CONSULTATION</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="bg-ivory">
+        <div class="container">
+            <div class="text-center mb-8">
+                <p class="text-xs uppercase tracking-wide text-forest mb-4">Wellness Services</p>
+                <h2>My Practice</h2>
+                <p class="mt-4" style="color: var(--charcoal); opacity: 0.8;">Personalized wellness sessions designed around your individual needs.</p>
+            </div>
+            <div class="grid-3">
+                <div class="premium-card">
+                    <div style="width: 100%; aspect-ratio: 1; background: linear-gradient(135deg, #b5d4b8 0%, #d9e8d4 100%); border-radius: 0.5rem; display: flex; align-items: center; justify-content: center; font-size: 3rem; margin-bottom: 1rem;">🍃</div>
+                    <h3>Dry Cupping</h3>
+                    <p class="text-sm" style="color: var(--charcoal); opacity: 0.8;">A traditional wellness practice using suction to promote circulation and relaxation. Available as home-visit sessions.</p>
+                    <button class="btn-secondary" style="display: block; margin-top: 1rem; text-align: center; width: 100%;" onclick="sendServiceWhatsApp('Dry Cupping')">BOOK A HOME VISIT</button>
+                </div>
+                <div class="premium-card">
+                    <div style="width: 100%; aspect-ratio: 1; background: linear-gradient(135deg, #8ca57f 0%, #b5d4b8 100%); border-radius: 0.5rem; display: flex; align-items: center; justify-content: center; font-size: 3rem; margin-bottom: 1rem;">🌿</div>
+                    <h3>Wet Cupping / Hijama</h3>
+                    <p class="text-sm" style="color: var(--charcoal); opacity: 0.8;">A traditional practice combining cupping with controlled micro-scarification, practiced with strict hygiene protocols. Available as home-visit sessions.</p>
+                    <button class="btn-secondary" style="display: block; margin-top: 1rem; text-align: center; width: 100%;" onclick="sendServiceWhatsApp('Wet Cupping / Hijama')">BOOK A HOME VISIT</button>
+                </div>
+                <div class="premium-card">
+                    <div style="width: 100%; aspect-ratio: 1; background: linear-gradient(135deg, #c5d5c0 0%, #d9e8d4 100%); border-radius: 0.5rem; display: flex; align-items: center; justify-content: center; font-size: 3rem; margin-bottom: 1rem;">🌸</div>
+                    <h3>Flower Medicine</h3>
+                    <p class="text-sm" style="color: var(--charcoal); opacity: 0.8;">A complementary wellness approach using carefully selected flower essences to support emotional and personal wellbeing. Available by home-visit consultation.</p>
+                    <button class="btn-secondary" style="display: block; margin-top: 1rem; text-align: center; width: 100%;" onclick="sendServiceWhatsApp('Flower Medicine')">BOOK A CONSULTATION</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Home Visits Section -->
+    <section id="home-visits">
+        <div class="container">
+            <div class="text-center mb-8">
+                <p class="text-xs uppercase tracking-wide text-forest mb-4">Current Service Model</p>
+                <h2>Professional Wellness Sessions, At Home</h2>
+                <p class="mt-4" style="color: var(--charcoal); opacity: 0.8;">Detox Cupping Therapy currently provides personalized home-visit sessions by appointment.</p>
+                <div style="margin-top: 2rem;">
+                    <span class="badge badge-primary">HOME VISITS AVAILABLE</span>
+                </div>
+            </div>
+            <div class="grid-4">
+                <div class="text-center">
+                    <div class="step-circle">01</div>
+                    <h3>Book</h3>
+                    <p class="text-sm" style="color: var(--charcoal); opacity: 0.8;">Send an enquiry or contact Hussain via WhatsApp, phone, or email.</p>
+                </div>
+                <div class="text-center">
+                    <div class="step-circle">02</div>
+                    <h3>Discuss</h3>
+                    <p class="text-sm" style="color: var(--charcoal); opacity: 0.8;">Confirm your preferred service and appointment details.</p>
+                </div>
+                <div class="text-center">
+                    <div class="step-circle">03</div>
+                    <h3>Home Visit</h3>
+                    <p class="text-sm" style="color: var(--charcoal); opacity: 0.8;">Hussain visits your home for the scheduled session.</p>
+                </div>
+                <div class="text-center">
+                    <div class="step-circle">04</div>
+                    <h3>Aftercare</h3>
+                    <p class="text-sm" style="color: var(--charcoal); opacity: 0.8;">Receive appropriate post-session guidance and support.</p>
+                </div>
+            </div>
+            <div class="text-center mt-8">
+                <button class="btn-primary" onclick="scrollTo('booking-form')">BOOK A HOME VISIT</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Approach Section -->
+    <section id="approach" class="bg-ivory">
+        <div class="container">
+            <div class="text-center mb-8">
+                <p class="text-xs uppercase tracking-wide text-forest mb-4">Philosophy</p>
+                <h2>More Than a Technique</h2>
+            </div>
+            <div class="grid-4">
+                <div class="text-center">
+                    <h3 class="text-forest mb-4">LISTEN</h3>
+                    <p class="text-sm" style="color: var(--charcoal); opacity: 0.8;">Understand the person, their goals, and their unique wellness needs.</p>
+                </div>
+                <div class="text-center">
+                    <h3 class="text-forest mb-4">ASSESS</h3>
+                    <p class="text-sm" style="color: var(--charcoal); opacity: 0.8;">Consider individual needs, suitability, and the most appropriate approach.</p>
+                </div>
+                <div class="text-center">
+                    <h3 class="text-forest mb-4">PERSONALIZE</h3>
+                    <p class="text-sm" style="color: var(--charcoal); opacity: 0.8;">Choose a wellness approach tailored to your individual circumstances.</p>
+                </div>
+                <div class="text-center">
+                    <h3 class="text-forest mb-4">SUPPORT</h3>
+                    <p class="text-sm" style="color: var(--charcoal); opacity: 0.8;">Provide thoughtful aftercare guidance and ongoing wellness support.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Safety Section -->
+    <section id="safety">
+        <div class="container">
+            <div class="text-center mb-8">
+                <h2>Your Safety Comes First</h2>
+                <p class="mt-4" style="color: var(--charcoal); opacity: 0.8;">Professional practices and transparent communication are at the heart of every session.</p>
+            </div>
+            <div class="grid-3">
+                <div class="premium-card">
+                    <h3 class="mb-4">Consultation First</h3>
+                    <p class="text-sm" style="color: var(--charcoal); opacity: 0.8;">A consultation helps determine whether a session is appropriate for your individual circumstances.</p>
+                </div>
+                <div class="premium-card">
+                    <h3 class="mb-4">Hygiene Practices</h3>
+                    <p class="text-sm" style="color: var(--charcoal); opacity: 0.8;">Professional hygiene standards are maintained throughout all sessions, with particular attention to sterile technique for wet cupping.</p>
+                </div>
+                <div class="premium-card">
+                    <h3 class="mb-4">Sterile, Disposable Equipment</h3>
+                    <p class="text-sm" style="color: var(--charcoal); opacity: 0.8;">For wet cupping, single-use sterile equipment is used, and all materials are properly disposed of following professional protocols.</p>
+                </div>
+                <div class="premium-card">
+                    <h3 class="mb-4">Clear Aftercare</h3>
+                    <p class="text-sm" style="color: var(--charcoal); opacity: 0.8;">You will receive detailed post-session guidance to support your wellness and ensure proper recovery.</p>
+                </div>
+                <div class="premium-card">
+                    <h3 class="mb-4">Professional Boundaries</h3>
+                    <p class="text-sm" style="color: var(--charcoal); opacity: 0.8;">Medical concerns that fall outside the scope of wellness practice are referred to appropriate healthcare providers.</p>
+                </div>
+            </div>
+            <div class="premium-card mt-8" style="background-color: rgba(232, 225, 216, 0.3); border-color: var(--gold);">
+                <h3 class="text-forest mb-4">Important Disclaimer</h3>
+                <p class="text-sm" style="color: var(--charcoal);">Cupping and flower medicine are complementary wellness practices and are not substitutes for medical diagnosis, treatment, or emergency care. If you have health concerns, consult with a healthcare provider. These practices are designed to support overall wellness, not to treat, cure, or prevent any disease.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Qualifications Section -->
+    <section id="qualifications">
+        <div class="container">
+            <div class="text-center mb-8">
+                <p class="text-xs uppercase tracking-wide text-forest mb-4">Professional Foundation</p>
+                <h2>Qualifications That Shape My Practice</h2>
+                <p class="mt-4" style="color: var(--charcoal); opacity: 0.8;">My credentials in pharmacy, cupping therapy, and flower medicine form the foundation of my professional approach to wellness.</p>
+            </div>
+            <div class="grid-3">
+                <div class="premium-card text-center">
+                    <h3 class="mb-4">Pharmacy Graduate</h3>
+                    <p class="text-sm mb-4"><strong>Qualification</strong></p>
+                    <p class="text-sm mb-4" style="color: var(--charcoal); opacity: 0.7;">[PHARMACY QUALIFICATION]</p>
+                    <p class="text-sm mb-4"><strong>Institution</strong></p>
+                    <p class="text-sm mb-4" style="color: var(--charcoal); opacity: 0.7;">[COLLEGE / UNIVERSITY]</p>
+                    <p class="text-sm mb-4"><strong>Year</strong></p>
+                    <p class="text-sm" style="color: var(--charcoal); opacity: 0.7;">[YEAR]</p>
+                </div>
+                <div class="premium-card text-center">
+                    <h3 class="mb-4">Certified Cupping Therapist</h3>
+                    <p class="text-sm mb-4"><strong>Qualification</strong></p>
+                    <p class="text-sm mb-4" style="color: var(--charcoal); opacity: 0.7;">[CERTIFICATION NAME]</p>
+                    <p class="text-sm mb-4"><strong>Institution</strong></p>
+                    <p class="text-sm mb-4" style="color: var(--charcoal); opacity: 0.7;">[TRAINING INSTITUTE]</p>
+                    <p class="text-sm mb-4"><strong>Year</strong></p>
+                    <p class="text-sm" style="color: var(--charcoal); opacity: 0.7;">[YEAR]</p>
+                </div>
+                <div class="premium-card text-center">
+                    <h3 class="mb-4">Certified Flower Medicine Practitioner</h3>
+                    <p class="text-sm mb-4"><strong>Qualification</strong></p>
+                    <p class="text-sm mb-4" style="color: var(--charcoal); opacity: 0.7;">[FLOWER MEDICINE CERTIFICATION NAME]</p>
+                    <p class="text-sm mb-4"><strong>Institution</strong></p>
+                    <p class="text-sm mb-4" style="color: var(--charcoal); opacity: 0.7;">[CERTIFICATION INSTITUTE]</p>
+                    <p class="text-sm mb-4"><strong>Year</strong></p>
+                    <p class="text-sm" style="color: var(--charcoal); opacity: 0.7;">[YEAR]</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="bg-ivory">
+        <div class="container">
+            <div class="text-center mb-8">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div class="accordion" onclick="toggleAccordion(this)">
+                    <button class="accordion-header">
+                        <span>What is dry cupping?</span>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Dry cupping is a traditional wellness practice that uses specially designed cups to create gentle suction on the skin. This promotes circulation, encourages relaxation, and supports the body's natural wellness processes. The practice has been used in various cultures for thousands of years.</p>
+                    </div>
+                </div>
+                <div class="accordion" onclick="toggleAccordion(this)">
+                    <button class="accordion-header">
+                        <span>What is wet cupping / Hijama?</span>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Wet cupping, also called Hijama, combines cupping with a controlled micro-scarification procedure. It is performed using sterile, single-use equipment and following strict hygiene protocols. This practice is tailored to your individual needs and requires a consultation to determine suitability.</p>
+                    </div>
+                </div>
+                <div class="accordion" onclick="toggleAccordion(this)">
+                    <button class="accordion-header">
+                        <span>What is Flower Medicine?</span>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Flower medicine is a complementary wellness practice using carefully selected flower essences to support emotional balance, personal reflection, and overall wellbeing. It is a personalized practice based on individual consultation and your unique wellness needs.</p>
+                    </div>
+                </div>
+                <div class="accordion" onclick="toggleAccordion(this)">
+                    <button class="accordion-header">
+                        <span>How should I prepare for a session?</span>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Preparation depends on the type of session. Generally: avoid heavy meals 1-2 hours before, stay hydrated, wear comfortable clothing, and communicate any concerns or sensitivities. For wet cupping, additional preparation guidelines will be discussed during your consultation.</p>
+                    </div>
+                </div>
+                <div class="accordion" onclick="toggleAccordion(this)">
+                    <button class="accordion-header">
+                        <span>What should I expect after cupping?</span>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>After dry cupping, you may notice mild marks or redness on the skin, which typically fades within a few days. After wet cupping, mild marking is normal and fades quickly. Avoid intense activity for 24 hours, stay hydrated, and follow the aftercare guidance provided. Most people report feeling relaxed and energized.</p>
+                    </div>
+                </div>
+                <div class="accordion" onclick="toggleAccordion(this)">
+                    <button class="accordion-header">
+                        <span>Is cupping suitable for everyone?</span>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Cupping is a traditional wellness practice, but it is not appropriate for everyone. During your consultation, we will assess your individual circumstances, health history, and suitability for the chosen practice. If cupping is not appropriate for you, alternative approaches may be discussed.</p>
+                    </div>
+                </div>
+                <div class="accordion" onclick="toggleAccordion(this)">
+                    <button class="accordion-header">
+                        <span>Do I need a consultation before booking?</span>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Yes, a consultation is strongly recommended before your first session. This allows us to understand your needs, assess suitability for the chosen practice, and ensure the session is appropriate and safe for you.</p>
+                    </div>
+                </div>
+                <div class="accordion" onclick="toggleAccordion(this)">
+                    <button class="accordion-header">
+                        <span>When should I seek medical care?</span>
+                        <span class="chevron">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>If you have health concerns, persistent symptoms, or questions about whether cupping or flower medicine is appropriate for you, please consult with a healthcare provider. These practices are complementary and not substitutes for medical diagnosis or treatment.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking-form">
+        <div class="container">
+            <div class="text-center mb-8">
+                <p class="text-xs uppercase tracking-wide text-forest mb-4">Book Your Home Visit</p>
+                <h2>Connect With Hussain</h2>
+                <p class="mt-4" style="color: var(--charcoal); opacity: 0.8;">Enquire about Dry Cupping, Wet Cupping / Hijama, or Certified Flower Medicine consultations. Home visits are currently available by appointment.</p>
+            </div>
+            <div style="max-width: 600px; margin: 0 auto;">
+                <div class="premium-card">
+                    <form id="bookingForm" onsubmit="handleFormSubmit(event)">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Full Name *</label>
+                                <input type="text" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Phone Number *</label>
+                                <input type="tel" name="phone" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Email Address *</label>
+                            <input type="email" name="email" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Preferred Service *</label>
+                                <select name="service" required>
+                                    <option value="">Select a service</option>
+                                    <option value="dry-cupping">Dry Cupping</option>
+                                    <option value="wet-cupping">Wet Cupping / Hijama</option>
+                                    <option value="flower-medicine">Flower Medicine</option>
+                                    <option value="consultation">General Consultation</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Area / Locality</label>
+                                <input type="text" name="area" placeholder="Your area or locality">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Preferred Date</label>
+                                <input type="date" name="date">
+                            </div>
+                            <div class="form-group">
+                                <label>Preferred Time</label>
+                                <input type="time" name="time">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Additional Message</label>
+                            <textarea name="message" rows="4" placeholder="Tell us about your wellness goals or any concerns..."></textarea>
+                        </div>
+                        <div class="premium-card" style="background-color: rgba(45, 90, 70, 0.05); border-color: var(--sage); margin-bottom: 1rem;">
+                            <p class="text-sm" style="color: var(--charcoal);">
+                                <strong>Home Visits Available:</strong> Detox Cupping Therapy currently provides personalized sessions at your home by appointment.
+                            </p>
+                        </div>
+                        <button type="submit" class="btn-primary" style="width: 100%;">BOOK A HOME VISIT</button>
+                        <p class="text-xs text-center mt-4" style="color: var(--charcoal); opacity: 0.6;">We respect your privacy. Your information will only be used to confirm your home-visit consultation.</p>
+                    </form>
+                    <div id="successMessage" style="display: none;">
+                        <div class="success-message">
+                            <div class="success-icon">✓</div>
+                            <h3>Thank You!</h3>
+                            <p style="color: var(--charcoal); opacity: 0.8;">We have received your inquiry.</p>
+                            <p class="text-sm" style="color: var(--charcoal); opacity: 0.7; margin-top: 1rem;">We will be in touch within 24 hours to confirm your home-visit consultation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-8">
+                <p style="color: var(--charcoal); opacity: 0.8; margin-bottom: 1rem;">Prefer to reach out directly?</p>
+                <div class="flex flex-col gap-4" style="max-width: 400px; margin: 0 auto;">
+                    <a href="tel:+917695993823" class="btn-secondary">CALL US</a>
+                    <a href="https://wa.me/917695993823?text=Hello%20Hussain,%20I%20would%20like%20to%20enquire%20about%20a%20home-visit%20session%20for%20cupping%20therapy%20or%20flower%20medicine.%20Could%20you%20please%20share%20more%20details%20and%20availability?" target="_blank" class="btn-secondary">WHATSAPP</a>
+                    <a href="mailto:[EMAIL ADDRESS]" class="btn-secondary">EMAIL</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Detox Cupping Therapy</h4>
+                    <p class="text-sm mb-4">Hussain Ahamed S M</p>
+                    <p class="text-sm" style="opacity: 0.8;">Pharmacy Graduate | Certified Cupping Therapist | Certified Flower Medicine Practitioner</p>
+                    <p class="text-xs mt-4" style="opacity: 0.7;">Freelance Practice • Home Visits Available • Clinic Coming Soon</p>
+                </div>
+                <div>
+                    <h5 style="margin-bottom: 1rem;">Navigate</h5>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Hussain</a></li>
+                        <li><a href="#qualifications">Qualifications</a></li>
+                        <li><a href="#services">Services</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 style="margin-bottom: 1rem;">Services</h5>
+                    <ul>
+                        <li><a href="#services">Dry Cupping</a></li>
+                        <li><a href="#services">Wet Cupping / Hijama</a></li>
+                        <li><a href="#services">Flower Medicine</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 style="margin-bottom: 1rem;">Contact</h5>
+                    <div class="space-y-2 text-sm">
+                        <p><a href="tel:[PHONE NUMBER]">[PHONE NUMBER]</a></p>
+                        <p><a href="mailto:[EMAIL ADDRESS]">[EMAIL ADDRESS]</a></p>
+                        <p style="opacity: 0.8;">Service Area: [CITY / AREAS]</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="text-sm">© 2026 Detox Cupping Therapy. All rights reserved.</p>
+                <p class="text-xs" style="opacity: 0.7;">Cupping and flower medicine are complementary wellness practices. Not substitutes for medical care. Always consult a healthcare provider with health concerns.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Smooth scroll function
+        function scrollTo(elementId) {
+            const element = document.getElementById(elementId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Accordion functionality
+        function toggleAccordion(element) {
+            const header = element.querySelector('.accordion-header');
+            const content = element.querySelector('.accordion-content');
+            const chevron = header.querySelector('.chevron');
+
+            const isActive = content.classList.contains('active');
+
+            // Close all accordions
+            document.querySelectorAll('.accordion-content').forEach(acc => {
+                acc.classList.remove('active');
+            });
+            document.querySelectorAll('.accordion-header').forEach(h => {
+                h.classList.remove('active');
+                h.querySelector('.chevron').classList.remove('active');
+            });
+
+            // Open clicked accordion
+            if (!isActive) {
+                content.classList.add('active');
+                header.classList.add('active');
+                chevron.classList.add('active');
+            }
+        }
+
+        // Service-specific WhatsApp inquiry
+        function sendServiceWhatsApp(service) {
+            let message = '';
+
+            if (service === 'Dry Cupping') {
+                message = `Hello Hussain, I am interested in booking a Dry Cupping session. Could you please share more details about the service, pricing, and availability for home visits?`;
+            } else if (service === 'Wet Cupping / Hijama') {
+                message = `Hello Hussain, I am interested in booking a Wet Cupping / Hijama session. Could you please share more details about the service, pricing, and availability for home visits?`;
+            } else if (service === 'Flower Medicine') {
+                message = `Hello Hussain, I am interested in a Flower Medicine consultation. Could you please share more details about the consultation, pricing, and availability for home visits?`;
+            }
+
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/917695993823?text=${encodedMessage}`;
+            window.open(whatsappUrl, '_blank');
+        }
+
+        // Form handling
+        function handleFormSubmit(event) {
+            event.preventDefault();
+
+            const form = document.getElementById('bookingForm');
+            const successMessage = document.getElementById('successMessage');
+
+            // Get form data
+            const name = form.elements['name'].value;
+            const phone = form.elements['phone'].value;
+            const email = form.elements['email'].value;
+            const service = form.elements['service'].value;
+            const area = form.elements['area'].value;
+            const date = form.elements['date'].value;
+            const time = form.elements['time'].value;
+            const message = form.elements['message'].value;
+
+            // Create WhatsApp message about Hussain and the booking
+            const whatsappMessage = `Hello Hussain,
+
+I have a booking inquiry from:
+Name: ${name}
+Phone: ${phone}
+Email: ${email}
+
+Service Interest: ${service}
+Area: ${area}
+Preferred Date: ${date || 'Not specified'}
+Preferred Time: ${time || 'Not specified'}
+
+Additional Message: ${message || 'None'}
+
+Hussain provides certified cupping therapy and flower medicine services with professional qualifications and experience. Please let me know about availability and next steps.
+
+Thank you!`;
+
+            // Send WhatsApp message to your number
+            const whatsappNumber = '917695993823';
+            const encodedMessage = encodeURIComponent(whatsappMessage);
+            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+            // Hide form and show success message
+            form.style.display = 'none';
+            successMessage.style.display = 'block';
+
+            // Open WhatsApp in new tab
+            window.open(whatsappUrl, '_blank');
+
+            // Reset form after 3 seconds
+            setTimeout(() => {
+                form.style.display = 'block';
+                successMessage.style.display = 'none';
+                form.reset();
+            }, 3000);
+        }
+    </script>
+</body>
+</html>

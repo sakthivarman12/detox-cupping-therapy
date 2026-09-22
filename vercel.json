@@ -2,11 +2,5 @@
   "buildCommand": "",
   "outputDirectory": "public",
   "framework": null,
-  "redirects": [
-    {
-      "source": "/((?!images|favicon|manifest)[^.]*?)/?$",
-      "destination": "/detox-cupping-therapy.html"
-    }
-  ],
   "public": true
 }
