@@ -746,6 +746,129 @@
             font-size: 2rem;
             margin: 0 auto 1rem;
         }
+
+        /* Animated steps (Home Visits section) */
+        .steps-scroll-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .steps-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            position: relative;
+            gap: 20px;
+        }
+
+        .step-item {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+
+        .circle-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 70px;
+            height: 70px;
+            margin-bottom: 20px;
+        }
+
+        .number-badge {
+            width: 55px;
+            height: 55px;
+            border: 1.5px solid var(--forest);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--forest);
+            background-color: var(--ivory);
+            z-index: 2;
+            opacity: 0;
+            transform: scale(0.5);
+            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .connecting-line {
+            position: absolute;
+            top: 35px;
+            left: calc(50% + 27.5px);
+            width: calc(100% - 35px);
+            height: 1px;
+            background-color: var(--forest);
+            z-index: 1;
+            transform: scaleX(0);
+            transform-origin: left center;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .step-item:last-child .connecting-line {
+            display: none;
+        }
+
+        .step-content {
+            text-align: center;
+            max-width: 240px;
+            opacity: 0;
+            transform: translateY(15px);
+            transition: all 0.5s ease-out;
+        }
+
+        .step-title {
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: var(--forest);
+            margin: 0 0 10px 0;
+        }
+
+        .step-desc {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: var(--charcoal);
+            opacity: 0.8;
+            margin: 0;
+        }
+
+        .step-item.active .number-badge {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .step-item.active .connecting-line {
+            transform: scaleX(1);
+        }
+
+        .step-item.active .step-content {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 768px) {
+            .steps-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 40px;
+            }
+            .connecting-line {
+                top: 70px;
+                left: 50%;
+                width: 1px;
+                height: 40px;
+                transform: scaleY(0);
+                transform-origin: top center;
+            }
+            .step-item.active .connecting-line {
+                transform: scaleY(1);
+            }
+        }
     </style>
 </head>
 <body>
@@ -818,8 +941,8 @@
                 <img src="/images/therapist/hussain.png" alt="Hussain Ahamed S M" class="hero-portrait" style="object-fit: cover;">
                 <div class="space-y-8">
                     <div>
-                        <p class="text-xs uppercase tracking-wide text-forest mb-4">About Hussain</p>
-                        <h2>Meet Hussain Ahamed S M</h2>
+                        <p class="text-xs uppercase tracking-wide text-forest mb-4">Meet</p>
+                        <h2>Hussain Ahamed S M</h2>
                         <p class="mb-6" style="color: var(--charcoal); opacity: 0.8;">A qualified, certified, and personalized approach to holistic wellness.</p>
                     </div>
                     <p style="color: var(--charcoal); opacity: 0.85;">Hussain Ahamed S M combines pharmaceutical education with certified training in cupping therapy and flower medicine to offer personalized home-visit wellness sessions. With a commitment to professional practice, safety-conscious care, and individual attention, Hussain provides a thoughtful, personalized approach to wellness in the comfort of your own home.</p>
@@ -848,19 +971,19 @@
             </div>
             <div class="grid-3">
                 <div class="premium-card">
-                    <div style="width: 100%; aspect-ratio: 1; background: linear-gradient(135deg, #b5d4b8 0%, #d9e8d4 100%); border-radius: 0.5rem; display: flex; align-items: center; justify-content: center; font-size: 3rem; margin-bottom: 1rem;">🍃</div>
+                    <img src="/images/dry-cupping/card.webp" alt="Dry cupping therapy session" style="width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 0.5rem; margin-bottom: 1rem;">
                     <h3>Dry Cupping</h3>
                     <p class="text-sm" style="color: var(--charcoal); opacity: 0.8;">A traditional wellness practice using suction to promote circulation and relaxation. Available as home-visit sessions.</p>
                     <button class="btn-secondary" style="display: block; margin-top: 1rem; text-align: center; width: 100%;" onclick="sendServiceWhatsApp('Dry Cupping')">BOOK A HOME VISIT</button>
                 </div>
                 <div class="premium-card">
-                    <div style="width: 100%; aspect-ratio: 1; background: linear-gradient(135deg, #8ca57f 0%, #b5d4b8 100%); border-radius: 0.5rem; display: flex; align-items: center; justify-content: center; font-size: 3rem; margin-bottom: 1rem;">🌿</div>
+                    <img src="/images/wet-cupping/card.webp" alt="Wet cupping / Hijama therapy session" style="width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 0.5rem; margin-bottom: 1rem;">
                     <h3>Wet Cupping / Hijama</h3>
                     <p class="text-sm" style="color: var(--charcoal); opacity: 0.8;">A traditional practice combining cupping with controlled micro-scarification, practiced with strict hygiene protocols. Available as home-visit sessions.</p>
                     <button class="btn-secondary" style="display: block; margin-top: 1rem; text-align: center; width: 100%;" onclick="sendServiceWhatsApp('Wet Cupping / Hijama')">BOOK A HOME VISIT</button>
                 </div>
                 <div class="premium-card">
-                    <div style="width: 100%; aspect-ratio: 1; background: linear-gradient(135deg, #c5d5c0 0%, #d9e8d4 100%); border-radius: 0.5rem; display: flex; align-items: center; justify-content: center; font-size: 3rem; margin-bottom: 1rem;">🌸</div>
+                    <img src="/images/flower-medicine/card.webp" alt="Flower medicine consultation" style="width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 0.5rem; margin-bottom: 1rem;">
                     <h3>Flower Medicine</h3>
                     <p class="text-sm" style="color: var(--charcoal); opacity: 0.8;">A complementary wellness approach using carefully selected flower essences to support emotional and personal wellbeing. Available by home-visit consultation.</p>
                     <button class="btn-secondary" style="display: block; margin-top: 1rem; text-align: center; width: 100%;" onclick="sendServiceWhatsApp('Flower Medicine')">BOOK A CONSULTATION</button>
@@ -880,30 +1003,53 @@
                     <span class="badge badge-primary">HOME VISITS AVAILABLE</span>
                 </div>
             </div>
-            <div class="grid-4">
-                <div class="text-center">
-                    <div class="step-circle">01</div>
-                    <h3>Book</h3>
-                    <p class="text-sm" style="color: var(--charcoal); opacity: 0.8;">Send an enquiry or contact Hussain via WhatsApp, phone, or email.</p>
-                </div>
-                <div class="text-center">
-                    <div class="step-circle">02</div>
-                    <h3>Discuss</h3>
-                    <p class="text-sm" style="color: var(--charcoal); opacity: 0.8;">Confirm your preferred service and appointment details.</p>
-                </div>
-                <div class="text-center">
-                    <div class="step-circle">03</div>
-                    <h3>Home Visit</h3>
-                    <p class="text-sm" style="color: var(--charcoal); opacity: 0.8;">Hussain visits your home for the scheduled session.</p>
-                </div>
-                <div class="text-center">
-                    <div class="step-circle">04</div>
-                    <h3>Aftercare</h3>
-                    <p class="text-sm" style="color: var(--charcoal); opacity: 0.8;">Receive appropriate post-session guidance and support.</p>
+            <div class="steps-scroll-section">
+                <div class="steps-container">
+                    <div class="step-item">
+                        <div class="circle-wrapper">
+                            <div class="number-badge">01</div>
+                            <div class="connecting-line"></div>
+                        </div>
+                        <div class="step-content">
+                            <h3 class="step-title">Book</h3>
+                            <p class="step-desc">Send an enquiry or contact Hussain via WhatsApp, phone, or email.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="circle-wrapper">
+                            <div class="number-badge">02</div>
+                            <div class="connecting-line"></div>
+                        </div>
+                        <div class="step-content">
+                            <h3 class="step-title">Discuss</h3>
+                            <p class="step-desc">Confirm your preferred service and appointment details.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="circle-wrapper">
+                            <div class="number-badge">03</div>
+                            <div class="connecting-line"></div>
+                        </div>
+                        <div class="step-content">
+                            <h3 class="step-title">Home Visit</h3>
+                            <p class="step-desc">Hussain visits your home for the scheduled session.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="circle-wrapper">
+                            <div class="number-badge">04</div>
+                            <div class="connecting-line"></div>
+                        </div>
+                        <div class="step-content">
+                            <h3 class="step-title">Aftercare</h3>
+                            <p class="step-desc">Receive appropriate post-session guidance and support.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="text-center mt-8">
+            <div class="text-center mt-8 flex flex-col gap-4" style="align-items: center;">
                 <button class="btn-primary" onclick="scrollTo('booking-form')">BOOK A HOME VISIT</button>
+                <a href="https://wa.me/917695993823?text=Hello%20Hussain,%20I%20would%20like%20to%20book%20a%20home%20visit.%20Could%20you%20please%20share%20more%20details%3F" target="_blank" class="btn-secondary">ENQUIRE ON WHATSAPP</a>
             </div>
         </div>
     </section>
@@ -1223,6 +1369,37 @@
     </footer>
 
     <script>
+        // Animated steps (Home Visits section)
+        (() => {
+            const items = document.querySelectorAll('.step-item');
+            if (!items.length) return;
+
+            const timers = new Map();
+            const clearTimer = (item) => {
+                if (timers.has(item)) {
+                    clearTimeout(timers.get(item));
+                    timers.delete(item);
+                }
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    const item = entry.target;
+                    clearTimer(item);
+                    if (entry.isIntersecting) {
+                        const index = Array.from(items).indexOf(item);
+                        timers.set(item, setTimeout(() => {
+                            item.classList.add('active');
+                        }, index * 150));
+                    } else {
+                        item.classList.remove('active');
+                    }
+                });
+            }, { threshold: 0.3, rootMargin: '0px 0px -10% 0px' });
+
+            items.forEach(item => observer.observe(item));
+        })();
+
         // Mobile menu toggle
         const menuToggle = document.getElementById('menuToggle');
         const navLinks = document.getElementById('navLinks');
