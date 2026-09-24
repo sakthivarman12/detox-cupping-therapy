@@ -1281,14 +1281,14 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label>Area / Locality</label>
-                                <input type="text" name="area" placeholder="Your area or locality">
+                                <label>Area / Locality *</label>
+                                <input type="text" name="area" placeholder="Your area or locality" required>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group">
-                                <label>Preferred Date</label>
-                                <input type="date" name="date">
+                                <label>Preferred Date *</label>
+                                <input type="date" name="date" required>
                             </div>
                             <div class="form-group">
                                 <label>Preferred Time</label>
@@ -1304,7 +1304,7 @@
                                 <strong>Home Visits Available:</strong> Detox Cupping Therapy currently provides personalized sessions at your home by appointment.
                             </p>
                         </div>
-                        <button type="submit" class="btn-primary" style="width: 100%;">BOOK A HOME VISIT</button>
+                        <button type="submit" id="bookingSubmit" class="btn-primary" style="width: 100%;">SUBMIT</button>
                         <p class="text-xs text-center mt-4" style="color: var(--charcoal); opacity: 0.6;">We respect your privacy. Your information will only be used to confirm your home-visit consultation.</p>
                     </form>
                     <div id="successMessage" style="display: none;">
@@ -1474,60 +1474,73 @@
             window.open(whatsappUrl, '_blank');
         }
 
+        // Google Form integration — entry IDs come from the linked Google Form
+        const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSfHUCUDzwB1RZ5DxGn52D5OwryI03C7HF4LOkCTESvQqi44Ow/formResponse';
+
+        function submitToGoogleForm({ name, phone, email, serviceLabel, area, date, time, message }) {
+            const data = new URLSearchParams();
+            data.append('entry.508017324', name);
+            data.append('entry.1298782494', phone);
+            data.append('entry.1815951610', email);
+            // Required by the form's "Collect email addresses" setting
+            data.append('emailAddress', email);
+            data.append('entry.1088424481', area);
+            data.append('entry.141908139', serviceLabel);
+
+            if (date) {
+                const [year, month, day] = date.split('-');
+                data.append('entry.82948955_year', year);
+                data.append('entry.82948955_month', month);
+                data.append('entry.82948955_day', day);
+            }
+            if (time) {
+                const [hour, minute] = time.split(':');
+                data.append('entry.1270077588_hour', hour);
+                data.append('entry.1270077588_minute', minute);
+            }
+
+            // Additional Message is required in the Google Form
+            data.append('entry.1473661270', message || 'None');
+
+            // no-cors: Google doesn't return CORS headers, so the response is opaque
+            return fetch(GOOGLE_FORM_URL, { method: 'POST', mode: 'no-cors', body: data })
+                .catch(err => console.error('Google Form submission failed:', err));
+        }
+
         // Form handling
-        function handleFormSubmit(event) {
+        async function handleFormSubmit(event) {
             event.preventDefault();
 
             const form = document.getElementById('bookingForm');
             const successMessage = document.getElementById('successMessage');
+            const submitButton = document.getElementById('bookingSubmit');
 
-            // Get form data
-            const name = form.elements['name'].value;
-            const phone = form.elements['phone'].value;
-            const email = form.elements['email'].value;
-            const service = form.elements['service'].value;
-            const area = form.elements['area'].value;
-            const date = form.elements['date'].value;
-            const time = form.elements['time'].value;
-            const message = form.elements['message'].value;
+            submitButton.disabled = true;
+            submitButton.textContent = 'SUBMITTING...';
 
-            // Create WhatsApp message about Hussain and the booking
-            const whatsappMessage = `Hello Hussain,
-
-I have a booking inquiry from:
-Name: ${name}
-Phone: ${phone}
-Email: ${email}
-
-Service Interest: ${service}
-Area: ${area}
-Preferred Date: ${date || 'Not specified'}
-Preferred Time: ${time || 'Not specified'}
-
-Additional Message: ${message || 'None'}
-
-Hussain provides certified cupping therapy and flower medicine services with professional qualifications and experience. Please let me know about availability and next steps.
-
-Thank you!`;
-
-            // Send WhatsApp message to your number
-            const whatsappNumber = '917695993823';
-            const encodedMessage = encodeURIComponent(whatsappMessage);
-            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+            await submitToGoogleForm({
+                name: form.elements['name'].value,
+                phone: form.elements['phone'].value,
+                email: form.elements['email'].value,
+                serviceLabel: form.elements['service'].selectedOptions[0].text,
+                area: form.elements['area'].value,
+                date: form.elements['date'].value,
+                time: form.elements['time'].value,
+                message: form.elements['message'].value
+            });
 
             // Hide form and show success message
             form.style.display = 'none';
             successMessage.style.display = 'block';
+            form.reset();
+            submitButton.disabled = false;
+            submitButton.textContent = 'SUBMIT';
 
-            // Open WhatsApp in new tab
-            window.open(whatsappUrl, '_blank');
-
-            // Reset form after 3 seconds
+            // Bring the form back after 5 seconds
             setTimeout(() => {
                 form.style.display = 'block';
                 successMessage.style.display = 'none';
-                form.reset();
-            }, 3000);
+            }, 5000);
         }
     </script>
 </body>
