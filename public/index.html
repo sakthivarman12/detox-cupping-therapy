@@ -871,16 +871,37 @@
         }
 
         @media (max-width: 768px) {
+            /* Vertical timeline: circles on the left, text on the right */
+            .steps-scroll-section {
+                padding: 20px 0;
+            }
             .steps-container {
                 flex-direction: column;
-                align-items: center;
+                align-items: stretch;
                 gap: 40px;
+                max-width: 440px;
+                margin: 0 auto;
             }
+            .step-item {
+                flex-direction: row;
+                align-items: flex-start;
+                gap: 16px;
+            }
+            .circle-wrapper {
+                flex-shrink: 0;
+                margin-bottom: 0;
+            }
+            .step-content {
+                text-align: left;
+                max-width: none;
+                padding-top: 14px;
+            }
+            /* Runs from the bottom of this circle to the top of the next (40px gap) */
             .connecting-line {
-                top: 70px;
-                left: 50%;
+                top: 62px;
+                left: 35px;
                 width: 1px;
-                height: 40px;
+                height: calc(100% - 14px);
                 transform: scaleY(0);
                 transform-origin: top center;
             }
