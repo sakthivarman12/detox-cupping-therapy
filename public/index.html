@@ -1373,16 +1373,6 @@
                                 <input type="text" name="area" placeholder="Your area or locality" required>
                             </div>
                         </div>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label>Preferred Date *</label>
-                                <input type="date" name="date" required>
-                            </div>
-                            <div class="form-group">
-                                <label>Preferred Time</label>
-                                <input type="time" name="time">
-                            </div>
-                        </div>
                         <div class="form-group">
                             <label>Additional Message</label>
                             <textarea name="message" rows="4" placeholder="Tell us about your wellness goals or any concerns..."></textarea>
@@ -1588,7 +1578,7 @@
         // Google Form integration — entry IDs come from the linked Google Form
         const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSfHUCUDzwB1RZ5DxGn52D5OwryI03C7HF4LOkCTESvQqi44Ow/formResponse';
 
-        function submitToGoogleForm({ name, phone, email, serviceLabel, area, date, time, message }) {
+        function submitToGoogleForm({ name, phone, email, serviceLabel, area, message }) {
             const data = new URLSearchParams();
             data.append('entry.508017324', name);
             data.append('entry.1298782494', phone);
@@ -1597,18 +1587,6 @@
             data.append('emailAddress', email);
             data.append('entry.1088424481', area);
             data.append('entry.141908139', serviceLabel);
-
-            if (date) {
-                const [year, month, day] = date.split('-');
-                data.append('entry.82948955_year', year);
-                data.append('entry.82948955_month', month);
-                data.append('entry.82948955_day', day);
-            }
-            if (time) {
-                const [hour, minute] = time.split(':');
-                data.append('entry.1270077588_hour', hour);
-                data.append('entry.1270077588_minute', minute);
-            }
 
             // Additional Message is required in the Google Form
             data.append('entry.1473661270', message || 'None');
@@ -1635,8 +1613,6 @@
                 email: form.elements['email'].value,
                 serviceLabel: form.elements['service'].selectedOptions[0].text,
                 area: form.elements['area'].value,
-                date: form.elements['date'].value,
-                time: form.elements['time'].value,
                 message: form.elements['message'].value
             });
 
